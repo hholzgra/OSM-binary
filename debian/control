@@ -2,7 +2,7 @@ Source: libosmpbf-dev
 Section: libdevel
 Priority: optional
 Maintainer: Jochen Topf <jochen@topf.org>
-Build-Depends: debhelper (>= 7), libprotobuf-dev, protobuf-compiler
+Build-Depends: debhelper (>= 7), libprotobuf-dev, protobuf-compiler, zlib1g-dev
 Standards-Version: 3.9.1
 Homepage: http://wiki.openstreetmap.org/wiki/PBF_Format
 
