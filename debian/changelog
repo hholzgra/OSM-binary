@@ -1,3 +1,9 @@
+libosmpbf-dev (1.1.1j3) maverick; urgency=low
+
+  * Use autotools for build system
+
+ -- Hartmut Holzgraefe <hartmut@php.net> Sat, 11 Jun 2011 19:07:23 +0200
+
 libosmpbf-dev (1.1.1j2) maverick; urgency=low
 
   * Add manpage for osmpbf-outline tool
