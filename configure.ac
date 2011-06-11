@@ -16,5 +16,20 @@ AC_PROG_CXX
 dnl Make sure we have libtool installed
 AM_PROG_LIBTOOL
 
+dnl check for zlib library
+AX_LIB_ZLIB
+if test "$HAVE_ZLIB" = "no"
+then
+  AC_MSG_ERROR([required library not found]);
+fi
+
+dnl check for protobuf-lite library
+AX_LIB_PROTOBUF_LITE
+if test "$HAVE_PROTOBUF_LITE" = "no"
+then
+  AC_MSG_ERROR([required library not found]);
+fi
+
+
 dnl Generate Makefile
 AC_OUTPUT(Makefile src/Makefile tools/Makefile include/Makefile include/osmpbf/osmpbf.h)
