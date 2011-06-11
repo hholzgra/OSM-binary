@@ -23,8 +23,7 @@ build-stamp: configure-stamp
 	dh_testdir
 
 	# Add here commands to compile the package.
-	$(MAKE) -C src
-	$(MAKE) -C tools
+	$(MAKE) 
 
 	touch $@
 
@@ -34,8 +33,7 @@ clean:
 	rm -f build-stamp configure-stamp
 
 	# Add here commands to clean up after the build process.
-	$(MAKE) -C src clean || /bin/true
-	$(MAKE) -C tools clean || /bin/true
+	$(MAKE) || /bin/true
 
 	dh_clean 
 
@@ -46,8 +44,7 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/libosmpbf-dev.
-	$(MAKE) -C src DESTDIR=$(CURDIR)/debian/libosmpbf-dev install
-	$(MAKE) -C tools DESTDIR=$(CURDIR)/debian/libosmpbf-dev install
+	$(MAKE) DESTDIR=$(CURDIR)/debian/libosmpbf-dev install
 
 
 # Build architecture-independent files here.

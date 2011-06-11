@@ -1,5 +1,5 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT(osmpbf, 1.1.1j2)
+AC_INIT(osmpbf, 1.1.1j3)
 
 dnl Required autoconf version
 AC_PREREQ(2.61)
@@ -32,4 +32,4 @@ fi
 
 
 dnl Generate Makefile
-AC_OUTPUT(Makefile src/Makefile tools/Makefile include/Makefile include/osmpbf/osmpbf.h)
+AC_OUTPUT(Makefile include/osmpbf/osmpbf.h)
