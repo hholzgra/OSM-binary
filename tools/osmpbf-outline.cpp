@@ -88,13 +88,13 @@ void debug(const char* format, ...) {
 // prints short help/usage message
 static void usage(const char *name)
 {
-    printf("usage: %s [--color] file.osm.pbf", name);
+    printf("usage: %s [--color] file.osm.pbf", basename(name));
 }
 
 // prints version information
 static void version(const char *name)
 {
-  printf("%s - %s\n", name, PACKAGE_STRING);
+    printf("OSM-binary - %s\n", PACKAGE_STRING);
 }
 
 // application main method
@@ -132,7 +132,7 @@ int main(int argc, char *argv[]) {
 
     // check for proper command line args
     if(optind != argc-1) {
-      usage(argc[0]);
+      usage(argv[0]);
       exit(3);
     }
 
