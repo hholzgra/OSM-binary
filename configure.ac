@@ -5,10 +5,13 @@ dnl Required autoconf version
 AC_PREREQ(2.61)
 
 dnl use automake to generate standard Makefiles
-AM_INIT_AUTOMAKE([1.9.6])
+AM_INIT_AUTOMAKE([1.9.6 dist-zip std-options])
 
 dnl Additional macro definitions are in here
 AC_CONFIG_MACRO_DIR([m4])
+
+dnl Generate configuration header file
+AC_CONFIG_HEADER(config.h)
 
 dnl Find C++ compiler
 AC_PROG_CXX
@@ -29,7 +32,6 @@ if test "$HAVE_PROTOBUF_LITE" = "no"
 then
   AC_MSG_ERROR([required library not found]);
 fi
-
 
 dnl Generate Makefile
 AC_OUTPUT(Makefile include/osmpbf/osmpbf.h)
