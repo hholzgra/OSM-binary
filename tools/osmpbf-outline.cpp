@@ -1,3 +1,5 @@
+#include "config.h"
+
 // used for va_list in debug-print methods
 #include <stdarg.h>
 
@@ -83,6 +85,18 @@ void debug(const char* format, ...) {
     va_end(args);
 }
 
+// prints short help/usage message
+static void usage(const char *name)
+{
+    printf("usage: %s [--color] file.osm.pbf", name);
+}
+
+// prints version information
+static void version(const char *name)
+{
+  printf("%s - %s\n", name, PACKAGE_STRING);
+}
+
 // application main method
 int main(int argc, char *argv[]) {
     // check if the output is a tty so we can use colors
@@ -90,6 +104,9 @@ int main(int argc, char *argv[]) {
 
     static struct option long_options[] = {
         {"color",                no_argument, 0, 'c'},
+        {"help",                 no_argument, 0, 'h'},
+        {"version",              no_argument, 0, 'v'},
+        {0,0,0,0}
     };
 
     while (1) {
@@ -102,14 +119,22 @@ int main(int argc, char *argv[]) {
             case 'c':
                 usecolor = true;
                 break;
+	    case 'h':
+	        usage(argv[0]);
+	        exit(0);
+	    case 'v':
+	        version(argv[0]);
+                exit(0);
             default:
                 exit(1);
         }
     }
 
     // check for proper command line args
-    if(optind != argc-1)
-        err("usage: %s [--color] file.osm.pbf", argv[0]);
+    if(optind != argc-1) {
+      usage(argc[0]);
+      exit(3);
+    }
 
     // open specified file
     FILE *fp = fopen(argv[optind], "r");
