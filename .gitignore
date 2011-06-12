@@ -1,10 +1,10 @@
-*~
 *#
 *.a
 *.la
 *.lo
 *.o
 *.swp
+*~
 .deps
 .libs
 Makefile
@@ -13,6 +13,8 @@ aclocal.m4
 autom4te.cache/
 build-stamp
 config.guess
+config.h
+config.h.in
 config.log
 config.status
 config.sub
@@ -35,7 +37,9 @@ m4/ltsugar.m4
 m4/ltversion.m4
 m4/lt~obsolete.m4
 missing
-osmpbf-outline
 osmpbf-*.tar.gz
+osmpbf-*.zip
+osmpbf-outline
 src/*.pb.cc
 src/*.pb.h
+stamp-h1
